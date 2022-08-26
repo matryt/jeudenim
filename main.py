@@ -30,26 +30,23 @@ def joueurs():
 		return input(f"Quel est le nom du joueur ? \n")
 
 def print_allumettes(nombre = 1):
-	for i in range(nombre):
+	for _ in range(nombre):
 		print('.', end='  ')
 	print('\n')
-	for j in range(2):
-		for i in range(nombre):
+	for _ in range(2):
+		for _ in range(nombre):
 			print('|', end='  ')
 		print('\n')
 
 def ligne():
-	c = ""
-	for i in range(30):
-		c += "-"
-	return c
+	return "".join("-" for _ in range(30))
 
 def nombre_ordi():
 	if rm() < 0.75:
 		# print('III !')
-		if (nombre_allumettes - 1) % 4 == 1 and nombre_allumettes - 1 >= 0:
+		if (nombre_allumettes - 1) % 4 == 1 and nombre_allumettes >= 1:
 			return 1
-		if (nombre_allumettes - 2) % 4 == 1 and nombre_allumettes - 2 >= 0:
+		if (nombre_allumettes - 2) % 4 == 1 and nombre_allumettes >= 2:
 			return 2
 		if (nombre_allumettes - 3) % 4 == 1 and nombre_allumettes - 3 >= 0:
 			return 3
