@@ -7,13 +7,23 @@ ordi = False
 
 def debut():
 	global ordi
-	print('Bonjour et bienvenue dans ce jeu de Nim Python !')
-	o = input("Veux-tu jouer contre un autre joueur ou contre l'ordinateur ? (j/o) ")
+	print('Bonjour et bienvenue dans ce jeu de Nim Python ! \n\n')
+	o = input("Veux-tu jouer contre un autre joueur ou contre l'ordinateur ? (j/o) \n")
 	if o == 'o':
 		ordi = True
-	h = input('Voulez-vous avoir les règles du jeu ? (o/n) ')
+	difficulte()
+	h = input('Voulez-vous avoir les règles du jeu ? (o/n) \n')
 	if h == 'o':
 		return regles()
+
+def difficulte():
+	global nombre_allumettes
+	d = {1 : 16, 2 : 20, 3 : 25}
+	dif = int(input("Quelle difficulté souhaitez-vous ? (1 = 16 allumettes ; 2 = 20 allumettes ; 3 = 25 allumettes) \n"))
+	while not 1 <= dif <= 3:
+		print('Impossible ! Cette difficulté est inconnue !')
+		dif = int(input("Quelle difficulté souhaitez-vous ? (1 = 16 allumettes ; 2 = 20 allumettes ; 3 = 25 allumettes) \n"))
+	nombre_allumettes = d[dif]
 
 def regles():
 	print('Le jeu de Nim se joue à 2.')
