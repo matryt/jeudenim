@@ -24,13 +24,10 @@ def regles():
 	print(ligne())
 
 def joueurs():
-	return (
-		input(f"Quel est le nom du joueur ? \n")
-		if ordi
-		else tuple(
-			input(f"Quel est le nom du joueur {i + 1} ? \n") for i in range(2)
-		)
-	)
+	if not ordi:
+		return tuple(input(f"Quel est le nom du joueur {i + 1} ? \n") for i in range(2))
+	else:
+		return input(f"Quel est le nom du joueur ? \n")
 
 def print_allumettes(nombre = 1):
 	for _ in range(nombre):
@@ -51,7 +48,9 @@ def nombre_ordi():
 			return 1
 		if (nombre_allumettes - 2) % 4 == 1 and nombre_allumettes >= 2:
 			return 2
-		return 3 if (nombre_allumettes - 3) % 4 == 1 and nombre_allumettes >= 3 else 1
+		if (nombre_allumettes - 3) % 4 == 1 and nombre_allumettes - 3 >= 0:
+			return 3
+		return 1
 	else:
 		# print('BBB !')
 		a = rd(1, 3)
