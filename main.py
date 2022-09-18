@@ -53,7 +53,6 @@ def ligne():
 
 def nombre_ordi():
 	if rm() < 0.75:
-		# print('III !')
 		if (nombre_allumettes - 1) % 4 == 1 and nombre_allumettes >= 1:
 			return 1
 		if (nombre_allumettes - 2) % 4 == 1 and nombre_allumettes >= 2:
@@ -62,7 +61,6 @@ def nombre_ordi():
 			return 3
 		return 1
 	else:
-		# print('BBB !')
 		a = rd(1, 3)
 		while nombre_allumettes - a < 0:
 			a = rd(1, 3)
