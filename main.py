@@ -37,7 +37,7 @@ def joueurs():
 	if not ordi:
 		return tuple(input(f"Quel est le nom du joueur {i + 1} ? \n") for i in range(2))
 	else:
-		return input(f"Quel est le nom du joueur ? \n")
+		return input("Quel est le nom du joueur ? \n")
 
 def print_allumettes(nombre = 1):
 	for _ in range(nombre):
